@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva - Vive Patagonia</title>
+    <link rel="stylesheet" href="styles-contacto.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+        <div class="logo">
+            <img src="assets/vive patagonia - logo - sm.png" alt = "Logo Vive Patagonia">
+        </div>
+        </a>
+        <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+            <form class="contact-form">
+              <h2>¿Tenés dudas o querés saber más?</h2>
+              <p>Estamos acá para ayudarte.<br> Escribinos y te respondemos lo antes posible.</p>
+              <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Tu email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Teléfono</label>
+                <input type="tel" id="phone" name="phone" placeholder="Tu teléfono">
+              </div>
+              <div class="form-group">
+                <label for="subject">Asunto</label>
+                <input type="text" id="subject" name="subject" placeholder="Asunto" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" placeholder="Escribe tu mensaje" required></textarea>
+              </div>
+              <button type="submit">Enviar</button>
+            </form>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+            <div class="footer-links">
+                <ul>
+                    <li><a href="reservas.html">Reservas</a></li>
+                    <li><a href="quienes-somos.html">Quiénes somos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-policies">
+                <ul>
+                    <li><a href="#">Políticas de cookies</a></li>
+                    <li><a href="#">Políticas de privacidad</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-social">
+                <a href="https://wa.me/5492901412929" target="_blank"> <img src="assets/whatsapp-logo.png" alt="WhatsApp"></a>
+                <a href="https://www.instagram.com/vivepatagoniaturismo/" target="_blank"><img src="assets/instagram-logo.png" alt="Instagram"></a>
+                <a href="https://www.facebook.com/vivepatagoniaturismo/" target="_blank"><img src="assets/facebook-logo.png" alt="Facebook"></a>
+                <a href="https://www.tiktok.com/@vivepatagoniaturismo" target="_blank"><img src="assets/tiktok-logo.png" alt="Tik Tok"></a>
+                <a href="mailto:vivepatagoniaturismo@gmail.com" target="_blank"><img src="assets/gmail-logo.png" alt="Email"></a>
+            </div>
+            </div>
+                
+            <div class="footer-credits">
+                <a href="https://codigosur.com.ar/"><img src="assets/codigo-sur.logo.png" alt="Código Sur"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="contacto.js"> </script>
+
+</body>
+</html>

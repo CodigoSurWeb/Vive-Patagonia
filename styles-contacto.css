@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;    
+    background-color: #e3f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/*Estilo para el Header*/
+header {
+    background-color: #183c43;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 200px;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* Logo */
+  .logo img {
+    height: 95px;
+  }
+  
+  /* Menú por defecto: oculto */
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: none; /* Ocultar por defecto */
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Mostrar el menú cuando se activa la clase 'active' */
+  nav ul.active {
+    display: flex;
+  }
+  
+  /* Enlaces del menú */
+  nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-out;
+  }
+  
+  nav a:hover {
+    color: #F0A717;
+  }
+  
+  /* Botón hamburguesa: oculto por defecto */
+  .menu-toggle {
+    display: none;
+    margin-left: auto;
+    margin-right: 0;
+  }
+  
+  .menu-toggle:hover {
+    background: none;
+    color: inherit;
+  }
+
+  /* Ajustes para pantallas medianas */
+  @media (max-width: 1024px) {
+    header {
+      padding: 20px 100px;
+    }
+  }
+  
+  /* Ajustes para pantallas pequeñas */
+  @media (max-width: 768px) {
+    header {
+      padding: 15px 30px;
+    }
+  
+    .logo img {
+      height: 75px;
+    }
+  
+    .menu-toggle {
+      display: block; /* Mostrar hamburguesa */
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+      z-index: 15;
+      margin-left: auto;
+      margin-right: 0;
+    }
+  
+    nav ul {
+      position: absolute;
+      top: 100%;
+      right: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+      width: 200px;
+      padding: 20px;
+      background-color: rgba(24, 60, 67, 1);
+      border-radius: 0 0 10px 10px;
+    }
+  }
+  
+  /* Ajustes para pantallas grandes (menú horizontal y hamburguesa oculta) */
+  @media (min-width: 769px) {
+    nav ul {
+      display: flex; /* Mostrar menú horizontal */
+      flex-direction: row;
+      position: static;
+      background: transparent;
+      align-items: center;
+    }
+  
+    .menu-toggle {
+      display: none; /* Ocultar hamburguesa */
+    }
+  }
+
+
+  .contact-form {
+    position: relative;
+    background-color: white;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 600px;
+    box-shadow: 0 10px 40px rgba(31, 77, 85, 0.2);
+  }
+
+  .contact-form h2 {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .contact-form p{
+    text-align: center;
+    margin-bottom: 5%;
+
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #183c43;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  input::placeholder, 
+textarea::placeholder {
+    font-family: 'Montserrat', sans-serif;
+}
+
+button {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    padding: 10px;
+    background-color: #183c43;
+    color: #ecf7f9;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-out;
+}
+
+button:hover {
+    background-color: #296772;
+}
+
+button:active {
+    background-color: #c5e5eb;
+    color: #44abbe;
+}
+
+
+@media (max-width: 768px) {
+    .contact-form {
+      padding: 20px;
+    }
+
+    .contact-form h2 {
+      font-size: 1.6rem;
+    }
+
+    input,
+    textarea {
+      font-size: 0.95rem;
+    }
+
+    button {
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    body {
+      padding: 10px;
+    }
+
+    .contact-form {
+      padding: 16px;
+    }
+
+    .contact-form h2 {
+      font-size: 1.4rem;
+    }
+
+    input,
+    textarea {
+      font-size: 0.9rem;
+    }
+
+    button {
+      font-size: 0.9rem;
+    }
+  }
+
+  /*Estilo para el Footer*/
+footer {
+    background-color: #183c43;
+    color: white;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    width: 100%;
+} 
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left {
+    display: flex;
+    justify-content: space-between;  
+    flex: 1; 
+    gap: 20px;
+}
+
+.footer-links ul,
+.footer-policies ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li,
+.footer-policies ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links a,
+.footer-policies a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-links a:hover,
+.footer-policies a:hover {
+    color: #F0A717; 
+}
+
+.footer-social-credits {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.footer-social img {
+    width: 24px; 
+    height: 24px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-social img:hover {
+    transform: scale(1.1);
+}
+
+
+.footer-credits a img {
+    width: 120px;  
+    height: auto;
+}
+
+/* Media query para tablets */
+@media (max-width: 1024px) {
+    footer {
+        padding: 20px 30px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-left {
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-social-credits {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-credits {
+        margin-top: 10px;
+    }
+}
+
+/* Media query para celulares */
+@media (max-width: 768px) {
+    footer {
+        padding: 20px 15px;
+    }
+
+    .footer-links ul li,
+    .footer-policies ul li {
+        margin-bottom: 8px;
+    }
+
+    .footer-links a,
+    .footer-policies a {
+        font-size: 14px;
+    }
+
+    .footer-social img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .footer-credits a img {
+        width: 100px;
+    }
+}
