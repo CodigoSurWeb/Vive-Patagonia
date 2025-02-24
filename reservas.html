@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserva - Vive Patagonia</title>
     <link rel="stylesheet" href="styles-reservas.css">
+    <script src="reservas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <header>
@@ -60,25 +62,14 @@
                     </div>
                 </div>
                 
-                <fieldset>
-                    <legend>Servicios a contratar</legend>
-                        <select name="servicios" multiple size="5">
-                          <option value="navegacion">Navegación</option>
-                          <option value="parque-nacional">Parque Nacional</option>
-                          <option value="vive-tolhuin">Vive Tolhuin</option>
-                          <option value="laguna-esmeralda">Laguna Esmeralda</option>
-                          <option value="aventura-lagos">Aventura Lagos</option>
-                        </select>
-                </fieldset>
+                <label for="servicios">Servicios a contratar</label>
+                <select id="servicios">
+                    <option value="">Seleccionar servicio</option>
+                </select>
 
                 <label for="pago">Forma de pago</label>
                 <select id="pago">
-                    <option id="formadefault">Seleccionar opción</option>
-                    <option>Transferencia bancaria</option>
-                    <option>Mercado Pago</option>
-                    <option>PayPal</option>
-                    <option>Tarjeta de débito</option>
-                    <option>Tarjeta de crédito</option>
+                    <option value="">Seleccionar medio de pago</option>
                 </select>
                 
                 <label for="notas">Notas adicionales</label>
@@ -112,7 +103,7 @@
                 <a href="https://www.instagram.com/vivepatagoniaturismo/" target="_blank"><img src="assets/instagram-logo.png" alt="Instagram"></a>
                 <a href="https://www.facebook.com/vivepatagoniaturismo/" target="_blank"><img src="assets/facebook-logo.png" alt="Facebook"></a>
                 <a href="https://www.tiktok.com/@vivepatagoniaturismo" target="_blank"><img src="assets/tiktok-logo.png" alt="Tik Tok"></a>
-                <a href="mailto:vivepatagoniaturismo@gmail.com" target="_blank"><img src="assets/gmail-logo.png" alt="Email"></a>
+                <a href="/cdn-cgi/l/email-protection#b9cfd0cfdcc9d8cdd8ded6d7d0d8cdcccbd0cad4d6f9ded4d8d0d597dad6d4" target="_blank"><img src="assets/gmail-logo.png" alt="Email"></a>
             </div>
             </div>
                 
@@ -121,8 +112,5 @@
             </div>
         </div>
     </footer>
-    
-    <script src="reservas.js"></script>
-
-</body>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
 </html>
