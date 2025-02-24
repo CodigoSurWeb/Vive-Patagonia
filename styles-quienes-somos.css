@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;    
-    background-color: #44abbe;
+    background-color: #e3f2f5;
     color: #333;
     margin: 0;
     padding: 0;
@@ -121,180 +121,91 @@ header {
     }
   }
 
-/*Estilo para el Form de Reservas*/
-/* Icono */
-.icon {
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%); /* Centrado perfecto */
-
-}
-
-/* Formulario */
-.form-container {
-    position: relative;
-    background-color: #ecf7f9;
-    margin: 40px auto;
-    padding: 40px;
-    border-radius: 20px;
-    max-width: 600px;
-    box-shadow: 0 10px 40px rgba(31, 77, 85, 0.2);
-    opacity: 0;
-    transform: translateY(30px); /* Empuja el formulario hacia abajo */
-    animation: slideUp 1s ease-in-out forwards;
-}
-
-  /* Animación de deslizamiento desde abajo */
-  @keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px); /* Empieza más abajo */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0); /* Llega a su posición original */
-    }
-}
-
-
-/* Estilos para los encabezados */
-.form-container h2 {
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
     text-align: center;
-    padding-top: 70px;
-}
+  }
 
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s forwards ease-out;
+  }
 
-/* Estilos de los labels */
-label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-    color: #183c43;
-}
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards ease-out;
+    animation-delay: 0.5s;
+  }
 
-/* Estilos generales para inputs, selects, y textareas */
-input, select, textarea {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Placeholder personalizado */
-input::placeholder, 
-textarea::placeholder {
-    font-family: 'Montserrat', sans-serif;
-}
-
-/* Diseño en dos columnas */
-.two-columns {
+  .team {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Reduce el espacio entre los elementos */
-}
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
 
-/* Estilo para las columnas */
-.two-columns div {
-    flex: 1;
-    min-width: 250px; /* Ajuste mínimo para columnas */
-}
-
-/* Estilos del campo fieldset */
-fieldset {
-    display: block;
-    border: none;
-    margin-top: 10px;
-    padding-left: 0%;
-}
-
-/* Estilo para el legend */
-legend {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #183c43;
-}
-
-/* Estilo para las etiquetas dentro de fieldset */
-fieldset > label {
-    font-weight: normal;
-    margin-left: 10px;
-}
-
-/* Estilos para select */
-select {
-    font-family: 'Montserrat', sans-serif;
-}
-
-/* Estilo para el select por defecto */
-#formadefault {
-    color: rgba(30, 30, 30, 0.5);
-}
-
-/* Estilos del botón */
-button {
-    display: block;
-    font-family: 'Montserrat', sans-serif;
-    width: 100%;
-    padding: 10px;
-    background-color: #183c43;
-    color: #ecf7f9;
-    font-size: 14px;
-    font-weight: bold;
-    border: none;
-    border-radius: 15px;
-    margin-top: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-out;
-}
-
-/* Estilos para hover y active del botón */
-button:hover {
-    background-color: #296772;
-}
-
-button:active {
-    background-color: #c5e5eb;
-    color: #44abbe;
-}
-
-/* Animación para la imagen y título */
-.form-container h2 {
+  .member {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     opacity: 0;
-    transform: translateY(20px); /* Inicia un poco hacia abajo */
-    animation: slideUp 1.2s ease-in-out forwards;
-    animation-delay: 0.5s; /* Aparece después del formulario */
-}
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards ease-out;
+  }
 
+  .member:nth-child(1) { animation-delay: 0.6s; }
+  .member:nth-child(2) { animation-delay: 0.8s; }
+  .member:nth-child(3) { animation-delay: 1s; }
 
-/* Estilos responsivos para pantallas pequeñas */
-@media (max-width: 768px) {
-    .form-container {
-        padding: 20px; /* Reducir el padding en pantallas pequeñas */
+  .member img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+
+  .member h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+  }
+
+  .member span {
+    color: #0097B2;
+    font-weight: bold;
+    font-size: 0.95rem;
+  }
+
+  /* Animación */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
     }
-
-    .icon {
-        left: 50%; /* Centrar el icono */
-        transform: translateX(-50%); /* Ajustar la posición */
-        top: -20px;
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
+  }
 
-    .two-columns {
-        flex-direction: column; /* Convertir a columna en pantallas pequeñas */
-    }
+  /* Responsive */
+  @media (max-width: 600px) {
+    h1 { font-size: 2rem; }
+    p { font-size: 1rem; }
+    .member { width: 100%; }
+  }
 
-    .two-columns div {
-        min-width: 100%; /* Asegura que las columnas ocupen todo el ancho */
-    }
-
-    select {
-        width: 100%; /* Hacer que los selects ocupen todo el ancho disponible */
-    }
-}
-/*Estilo para el Footer*/
-footer {
+  /*Estilo para el Footer*/
+  footer {
     background-color: #183c43;
     color: white;
     padding: 20px 40px;

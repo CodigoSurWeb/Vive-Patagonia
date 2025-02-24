@@ -206,6 +206,23 @@ header {
     font-size: 19px;
 }
 
+ /* Definimos la animación de desplazamiento */
+ @keyframes slideIn {
+  from {
+    transform: translateY(-50px); /* Inicia desde 50px por encima */
+    opacity: 0; /* Comienza con opacidad 0 */
+  }
+  to {
+    transform: translateY(0); /* Finaliza en su posición original */
+    opacity: 1; /* Finaliza con opacidad 1 */
+  }
+}
+
+/* Aplicamos la animación a la sección */
+.servicios {
+  animation: slideIn 0.8s ease-out; /* Duración de 0.8 segundos y efecto suave */
+}
+  
 /* Estilos para la galería */
 .galeria {
     display: grid;
@@ -251,6 +268,23 @@ header {
     opacity: 1; /* Hace visible el texto */
 }
 
+@keyframes slideInGallery {
+  from {
+    transform: translateY(-50px); /* Inicia desde 50px por encima */
+    opacity: 0; /* Comienza con opacidad 0 */
+  }
+  to {
+    transform: translateY(0); /* Finaliza en su posición original */
+    opacity: 1; /* Finaliza con opacidad 1 */
+  }
+}
+
+/* Aplicamos la animación a la galería */
+.servicios .galeria {
+  animation: slideInGallery 1s ease-out; /* Duración de 1 segundo y efecto suave */
+  animation-delay: 0.3s; /* Retraso para que empiece después de la animación de la sección */
+}
+
 /* Media query para pantallas medianas (tablets) */
 @media (max-width: 1024px) {
     .imagen-container {
@@ -261,8 +295,8 @@ header {
       font-size: 20px;
     }
   }
-  
-  /* Media query para pantallas pequeñas (móviles) */
+
+   /* Media query para pantallas pequeñas (móviles) */
   @media (max-width: 768px) {
     .galeria {
       grid-template-columns: 1fr; /* Una sola columna en móviles */
