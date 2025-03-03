@@ -147,21 +147,26 @@ header {
 
   .team {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     margin-top: 30px;
+    align-items: center;
   }
 
   .member {
     background-color: #fff;
+    display: flex;
+    align-items: center;
     padding: 15px;
     border-radius: 12px;
-    width: 250px;
+    width: 800px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1s forwards ease-out;
+    gap: 20px;
   }
 
   .member:nth-child(1) { animation-delay: 0.6s; }
@@ -169,10 +174,17 @@ header {
   .member:nth-child(3) { animation-delay: 1s; }
 
   .member img {
-    width: 100%;
-    border-radius: 50%;
-    margin-bottom: 10px;
+    width: 250px;
+    height: 250px;
+    border-radius: 27px;
   }
+
+  .member-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
 
   .member h3 {
     font-size: 1.3rem;
@@ -180,7 +192,7 @@ header {
   }
 
   .member span {
-    color: #0097B2;
+    color: #183c43;
     font-weight: bold;
     font-size: 0.95rem;
   }
@@ -198,11 +210,44 @@ header {
   }
 
   /* Responsive */
-  @media (max-width: 600px) {
+  @media (max-width: 850px) {
     h1 { font-size: 2rem; }
     p { font-size: 1rem; }
-    .member { width: 100%; }
-  }
+
+    .member { 
+        width: 100%;
+        max-width: 400%;
+        flex-direction: column; /* Hace que la imagen y el texto estén en columna */
+        text-align: center; /* Centra el texto */
+        align-items: center; /* Centra los elementos */
+    }
+
+    .member-info {
+        text-align: center; /* Centra el texto */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.8rem; }
+    p { font-size: 0.95rem; }
+
+    .member { 
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .member img {
+        max-width: 200px; /* Reduce la imagen */
+        height: auto;
+    }
+
+    .member-info {
+        text-align: center;
+    }
+}
 
   /*Estilo para el Footer*/
   footer {
