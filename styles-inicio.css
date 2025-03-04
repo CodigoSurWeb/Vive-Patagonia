@@ -116,7 +116,7 @@ header {
 
 /* Estilo de Hero */
 .hero {
-    background: url('assets/hero-img.JPG') center/cover no-repeat;
+    background: url('assets/hero-img-verano.JPG') center/cover no-repeat fixed;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -186,6 +186,13 @@ header {
     height: 26px;
     border-radius: 50%;
     background-color: white;
+}
+
+/* Asegurar que en móviles el efecto funcione */
+@media (max-width: 768px) {
+  .hero {
+      background-attachment: scroll;
+  }
 }
 
 .servicios {
