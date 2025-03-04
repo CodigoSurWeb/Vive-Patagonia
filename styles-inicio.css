@@ -359,10 +359,200 @@ header {
       font-size: 18px;
     }
   }
+
+/* Contenedor principal del carrusel */
+.custom-carousel {
+  position: relative;
+  width: 80%; /* Ancho del carrusel */
+  max-width: 900px; /* Ancho máximo */
+  margin: 0 auto; /* Centrado */
+  border-radius: 20px; /* Esquinas redondeadas */
+  overflow: hidden; /* Ocultar cualquier parte que sobrepase los límites */
+}
+
+/* Contenedor de las imágenes del carrusel */
+.carousel-container {
+  display: flex;
+  transition: transform 1s  ease-out; /* Transición suave entre imágenes */
+}
+
+/* Cada item del carrusel */
+.carousel-item {
+  min-width: 100%; /* Cada imagen ocupa el 100% del carrusel */
+  height: 400px; /* Alto fijo para hacer el carrusel rectangular */
+  overflow: hidden; /* Esconde las imágenes que no encajan */
+}
+
+.carousel-item img {
+  width: 100%; /* Ancho 100% para que ocupe todo el contenedor */
+  height: 100%; /* Alto 100% para ajustarse sin distorsionar */
+  object-fit: cover; /* Asegura que las imágenes se ajusten bien sin perder proporción */
+}
+
+/* Estilos para las flechas de navegación */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent  !important;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.flota {
+    text-align: center;
+  }
+
+.flota h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+  .flota p {
+    margin-bottom: 50px;
+    font-size: 19px;
+}
   
+  /* Media Query para asegurar que sea responsive */
+  @media (max-width: 768px) {
+    .carousel-images img {
+      height: 250px; /* Ajuste la altura según el tamaño de pantalla */
+    }
+  }
+
+  /* Estilos para el formulario de contacto */
+
+  .Contacto{
+    background-color: #c5e5eb;
+    padding: 50px 20px; /* Relleno para alejar el formulario de los bordes */
+  }
+
+  
+  .contact-form {
+  position: relative;
+  background-color: white;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px; /* Reducimos el ancho */
+  box-shadow: 0 10px 40px rgba(31, 77, 85, 0.2);
+  z-index: 5; /* Aseguramos que esté por encima del carrusel */
+}
+
+.contact-form h2 {
+  color: #183c43;
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Espacio entre los campos */
+}
+
+.input-group {
+  flex: 1;
+}
+
+label {
+  display: block;
+  margin-top: 5px;
+  font-weight: bold;
+  color: #183c43;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  padding: 10px;
+  background-color: #183c43;
+  color: #ecf7f9;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-out;
+}
+
+input::placeholder, 
+textarea::placeholder {
+    font-family: 'Montserrat', sans-serif;
+}
+
+button:hover {
+  background-color: #296772;
+}
+
+button:active {
+  background-color: #c5e5eb;
+  color: #44abbe;
+}
+
+/* Media Queries para hacer el formulario responsive */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-form h2 {
+    font-size: 1.6rem;
+  }
+
+  input, textarea {
+    font-size: 0.95rem;
+  }
+
+  button {
+    font-size: 0.95rem;
+  }
+
+  .input-row {
+    flex-direction: column; /* En pantallas más pequeñas, los campos se apilan */
+  }
+
+  .input-group {
+    flex: unset; /* Para que cada campo ocupe todo el ancho */
+  }
+}
+
 .destinos {
     padding: 40px 20px;
-    margin-top: -40px;
     font-size: 30px;
     font-weight: 700;
     text-align: center;
