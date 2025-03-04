@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;    
-    background-color: #44abbe;
+    background-color: #e3f2f5;
     color: #333;
     margin: 0;
     padding: 0;
@@ -134,7 +134,7 @@ header {
 /* Formulario */
 .form-container {
     position: relative;
-    background-color: #ecf7f9;
+    background-color: #fff;
     margin: 40px auto;
     padding: 40px;
     border-radius: 20px;
