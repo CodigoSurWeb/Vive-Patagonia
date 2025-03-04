@@ -157,7 +157,7 @@ header {
     z-index: 2;
 }
 
-.toggle {
+/*.toggle {
     position: relative;
     z-index: 2;
 }
@@ -186,6 +186,24 @@ header {
     height: 26px;
     border-radius: 50%;
     background-color: white;
+}*/
+
+.cta-button {
+  display: inline-block;
+  padding:15px30px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #0097B2; /* Color primario */
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease; 
+  z-index: 1;
+}
+
+.cta-button:hover {
+  background-color: #F0A717; /* Color secundario */
 }
 
 /* Asegurar que en móviles el efecto funcione */
@@ -259,20 +277,37 @@ header {
   
 .texto-hover {
     position: absolute;
-    top: 80%; /* Centrado vertical */
-    left: 50%; /* Centrado horizontal */
-    transform: translate(-50%, -50%); /* Ajuste fino para el centro */
-    font-size: 22px;
-    font-weight: bold;
+    bottom: 10%; /* Centrado vertical */
+    left: 10%; /* Centrado horizontal */
+    transform: translate(0, 0); /* Ajuste fino para el centro */
+    text-align: left;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: opacity 900ms ease-in-out; 
     z-index: 2;
+    width: 80%;
 }
-  
+
+.texto-hover h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.texto-hover p {
+  font-size: 16px;
+  margin: 5px 0 0;
+  opacity: 0;
+  transition: opacity 900ms ease-in-out;
+}
+
 .imagen-container:hover .texto-hover {
     opacity: 1; /* Hace visible el texto */
+}
+
+.imagen-container:hover .texto-hover p {
+  opacity: 1;
 }
 
 @keyframes slideInGallery {
