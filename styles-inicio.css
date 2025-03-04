@@ -162,7 +162,6 @@ header {
 .modo-ushuaia {
   display: inline-block; /* Se alinea correctamente con el texto */
   font-size: inherit;
-  vertical-align: middle;
   gap: 0; /* Se elimina cualquier espacio extra */
 }
 
@@ -230,7 +229,10 @@ header {
 
 /* Ocultar el toggle cuando esté activado */
 .modo-ushuaia.active .toggle {
-  display: none; /* En vez de opacity: 0, lo eliminamos completamente */
+  opacity: 0;  /* Oculta el toggle con opacidad */
+  pointer-events: none; /* Evita que el toggle sea interactivo cuando está oculto */
+  position: absolute; /* Saca el toggle del flujo del documento */
+  visibility: hidden; /* Lo hace invisible sin que ocupe espacio */
 }
 
 /* Mostrar texto "Modo Ushuaia" después de que el toggle desaparezca */

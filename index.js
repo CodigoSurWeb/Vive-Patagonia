@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // Activar el switch automáticamente después de 1.5 segundos
   setTimeout(() => {
     toggleInput.checked = true; // Activa visualmente el switch
-    modoUshuaia.classList.add("active"); // Aplica la animación de fade-out del toggle
   }, 1000);
+
+  // Aplicar la clase 'active' después de que el toggle se haya mostrado
+  setTimeout(() => {
+    modoUshuaia.classList.add("active"); // Aplica la animación de fade-out del toggle
+  }, 1500); // Espera un poco más para asegurarse de que se vea antes de desaparecer
 });
