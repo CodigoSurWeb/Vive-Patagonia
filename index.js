@@ -23,3 +23,14 @@ function autoSlide() {
 }
 
 setInterval(autoSlide, 3000); // Cambia de imagen cada 3 segundos
+
+document.addEventListener("DOMContentLoaded", function () {
+  const modoUshuaia = document.querySelector(".modo-ushuaia");
+  const toggleInput = document.getElementById("toggle-switch");
+
+  // Activar el switch automáticamente después de 1.5 segundos
+  setTimeout(() => {
+    toggleInput.checked = true; // Activa visualmente el switch
+    modoUshuaia.classList.add("active"); // Aplica la animación de fade-out del toggle
+  }, 1000);
+});
