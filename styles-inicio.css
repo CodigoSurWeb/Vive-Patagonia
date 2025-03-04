@@ -190,20 +190,27 @@ header {
 
 .cta-button {
   display: inline-block;
-  padding:15px30px;
-  font-size: 16px;
+  padding: 15px 30px;
+  font-size: 18px;
   font-weight: bold;
-  background-color: #0097B2; /* Color primario */
+  background-color: transparent;
+  border: 2px solid white;
   color: white;
-  border-radius: 8px;
+  border-radius: 30px;
   text-decoration: none;
   text-align: center;
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(2px); /* Aplica el desenfoque al fondo */
   z-index: 1;
 }
 
 .cta-button:hover {
-  background-color: #F0A717; /* Color secundario */
+  background-color: #296772;
+}
+
+.cta-button:active {
+  background-color: #c5e5eb;
+  color: #44abbe;
 }
 
 /* Asegurar que en móviles el efecto funcione */
