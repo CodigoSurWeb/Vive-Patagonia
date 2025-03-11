@@ -276,6 +276,7 @@ header {
   }
 }
 
+
 .servicios {
     background-color: #44abbe;
     padding: 50px 20px;
@@ -287,6 +288,16 @@ header {
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 20px;
+    white-space: pre-wrap;
+}
+
+.servicios h2 span {
+  display: inline-block;
+  transition: transform 0.6s ease;
+}
+
+.servicios h2 span:hover {
+  transform: translateY(-20px);
 }
 
 .servicios p {

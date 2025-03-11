@@ -38,3 +38,15 @@ document.addEventListener("DOMContentLoaded", function () {
     modoUshuaia.classList.add("active"); // Aplica la animación de fade-out del toggle
   }, 1500); // Espera un poco más para asegurarse de que se vea antes de desaparecer
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const titulo = document.getElementById("animado");
+  const texto = titulo.innerText;
+  titulo.innerHTML = ""; // Vacía el contenido original
+
+  texto.split("").forEach(letra => {
+    const span = document.createElement("span");
+    span.textContent = letra;
+    titulo.appendChild(span);
+  });
+});
