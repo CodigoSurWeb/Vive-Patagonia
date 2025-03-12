@@ -45,51 +45,73 @@
         
           <section class="servicios" id="servicios">
             <h2 id="animado">Conociendo lugares, uniendo personas</h2>
-            <p>¡VIVE PATAGONIA es tu mejor opción para traslados en Tierra del Fuego!</p>
+            <p>¡VIVE PATAGONIA es tu mejor opción para conocer Tierra del Fuego!</p>
 
-            <div class="galeria">
-
-              <div class="imagen-container">
-                <img src="assets/tren del fin del mundo.jpg" alt="Tren">
-                <div class="texto-hover">
-                  <h3>Tren del Fin del Mundo</h3>
-                  <p>Un recorrido inolvidable por la naturaleza patagónica.</p>
-                </div>
+            <div class="carrusel-container">
+              <!-- Carrusel con desplazamiento horizontal -->
+              <div class="carrusel">
+                  <!-- Card 1 -->
+                  <div class="card" data-descripcion-larga="Descripción larga para Card 1. Más detalles sobre el producto." data-precio="$100">
+                      <img src="assets/tolhiun.png" alt="Imagen 1">
+                      <div class="card-description">
+                          <h3>Card 1</h3>
+                          <p class="short-description">Breve descripción...</p>
+                          <button class="ver-mas">Ver más</button>
+                      </div>
+                  </div>
+                  <!-- Card 2 -->
+                  <div class="card" data-descripcion-larga="Descripción larga para Card 2. Más detalles sobre el producto." data-precio="$150">
+                      <img src="assets/tren del fin del mundo.jpg" alt="Imagen 2">
+                      <div class="card-description">
+                          <h3>Card 2</h3>
+                          <p class="short-description">Breve descripción...</p>
+                          <button class="ver-mas">Ver más</button>
+                      </div>
+                  </div>
+                  <!-- Agregar más cards hasta llegar a 10 -->
+                  <div class="card" data-descripcion-larga="Descripción larga para Card 3. Más detalles sobre el producto." data-precio="$120">
+                      <img src="assets/lago-fagnano.jpg" alt="Imagen 3">
+                      <div class="card-description">
+                          <h3>Card 3</h3>
+                          <p class="short-description">Breve descripción...</p>
+                          <button class="ver-mas">Ver más</button>
+                      </div>
+                  </div>
+                  <!-- Continúa con más cards hasta la décima -->
+                  <!-- Card 4 -->
+                  <div class="card" data-descripcion-larga="Descripción larga para Card 4. Más detalles sobre el producto." data-precio="$130">
+                      <img src="assets/img4.jpg" alt="Imagen 4">
+                      <div class="card-description">
+                          <h3>Card 4</h3>
+                          <p class="short-description">Breve descripción...</p>
+                          <button class="ver-mas">Ver más</button>
+                      </div>
+                  </div>
+                  <!-- Card 5 -->
+                  <div class="card" data-descripcion-larga="Descripción larga para Card 5. Más detalles sobre el producto." data-precio="$140">
+                      <img src="assets/img5.jpg" alt="Imagen 5">
+                      <div class="card-description">
+                          <h3>Card 5</h3>
+                          <p class="short-description">Breve descripción...</p>
+                          <button class="ver-mas">Ver más</button>
+                      </div>
+                  </div>
+                  <!-- Añadir más hasta Card 10 -->
               </div>
-
-              <div class="imagen-container">
-                <img src="assets/laguna-esmeralda.jpg" alt="Lago Roca">
-                <div class="texto-hover">
-                  <h3>Lago Roca</h3> 
-                  <p>Un refugio natural donde la tranquilidad y las vistas inigualables te invitan a desconectar.</p>
-                </div>
+          
+              <!-- Descripción extendida y botón de reserva -->
+              <div class="descripcion-extendida" id="descripcion-extendida">
+                  <h2>Descripción extendida</h2>
+                  <p id="descripcion-larga"></p>
+                  <p><strong id="precio"></strong></p>
+                  <button class="reservar-btn">Reservar</button>
               </div>
+          
+              <!-- Botones de navegación del carrusel -->
+              <button class="prev" id="prev">❮</button>
+              <button class="next" id="next">❯</button>
+          </div>
 
-              <div class="imagen-container">
-                <img src="assets/tolhiun.png" alt="Laguna Esmeralda">
-                <div class="texto-hover">
-                  <h3>Laguna Esmeralda</h3> 
-                  <p>Un paraíso escondido en la montaña que te sorprenderá con su belleza única.</p>
-                </div>
-              </div>
-              
-              <div class="imagen-container">
-                <img src="assets/lago-fagnano.jpg" alt="Lago Escondido">
-                <div class="texto-hover">
-                  <h3>Lago Escondido</h3> 
-                  <p>Un lugar misterioso y fascinante rodeado de naturaleza virgen, ideal para los amantes del aire libre.</p>
-                </div>
-              </div>
-
-              <div class="imagen-container">
-                <img src="assets/parque-nacional.jpg" alt="Parque Nacional">
-                <div class="texto-hover">
-                  <h3>Parque Nacional</h3> 
-                  <p>Un vasto espacio de naturaleza intacta donde la flora, fauna y paisajes patagónicos te dejarán sin aliento.</p>
-                </div>
-              </div>
-
-            </div>
           </section>
 
           <section class = "flota">

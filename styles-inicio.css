@@ -151,7 +151,7 @@ header {
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 10px;
     z-index: 2;
@@ -165,19 +165,11 @@ header {
   gap: 0; /* Se elimina cualquier espacio extra */
 }
 
-/* Texto "Modo Ushuaia" (oculto por defecto) */
-.modo-texto {
-  opacity: 0;
-  font-weight: bold;
-  white-space: nowrap;
-  visibility: hidden;
-  transition: opacity 0.5s ease-in-out;
-  position: absolute; /* Se coloca sobre el toggle */
-}
-
 /* Toggle */
 .toggle {
   position: relative;
+  top: -8px; 
+  margin: 0 8px;;
   display: inline-block;
   width: 80px;
   height: 40px;
@@ -186,7 +178,7 @@ header {
   z-index: 3;
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, opacity 0.2s ease-out;
 }
 
 .toggle input {
@@ -195,7 +187,8 @@ header {
   height: 0;
 }
 
-.toggle .slider {
+
+.toggle label {
   position: absolute;
   top: 0;
   left: 0;
@@ -206,7 +199,7 @@ header {
   transition: background-color 0.5s ease-in-out;
 }
 
-.toggle .slider::before {
+.toggle label::before {
   content: "";
   position: absolute;
   top: 5px;
@@ -219,12 +212,23 @@ header {
 }
 
 /* Estilo cuando el toggle está activado */
-.toggle input:checked + .slider {
+.toggle input:checked + label {
   background-color: #4CAF50;
 }
 
-.toggle input:checked + .slider::before {
+.toggle input:checked + label::before {
   transform: translateX(40px);
+}
+
+/* Texto "Modo Ushuaia" (oculto por defecto) */
+.modo-texto {
+  opacity: 0;
+  font-weight: bold;
+  white-space: nowrap;
+  visibility: hidden;
+  transform: translateX(-10px); /* Comienza un poco más a la izquierda */
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  position: absolute; /* Se coloca sobre el toggle */
 }
 
 /* Ocultar el toggle cuando esté activado */
@@ -233,6 +237,7 @@ header {
   pointer-events: none; /* Evita que el toggle sea interactivo cuando está oculto */
   position: absolute; /* Saca el toggle del flujo del documento */
   visibility: hidden; /* Lo hace invisible sin que ocupe espacio */
+  transform: translateX(0); /* Se mueve suavemente a su posición original */
 }
 
 /* Mostrar texto "Modo Ushuaia" después de que el toggle desaparezca */
@@ -240,8 +245,9 @@ header {
   opacity: 1;
   visibility: visible;
   position: relative; /* Recupera su lugar en el flujo del texto */
-  transition-delay: 0.3s;
+  transition-delay: 0.1s;
 }
+
 
 
 .cta-button {
@@ -322,66 +328,83 @@ header {
   animation: slideIn 0.8s ease-out; /* Duración de 0.8 segundos y efecto suave */
 }
   
-/* Estilos para la galería */
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas adaptables */
-    gap: 20px;
-  }
-  
-  /* Contenedor de la imagen */
-.imagen-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 20px; /* Radio más pequeño para pantallas chicas */
-    height: 400px; /* Ajuste para que no sea tan alto en pantallas pequeñas */
-    transition: filter 300ms ease-in-out;
-  }
-  
-  .imagen-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: filter 300ms ease-in-out;
-  }
-  
-.imagen-container:hover img {
-    filter: brightness(50%);
-}
-  
-.texto-hover {
-    position: absolute;
-    bottom: 10%; /* Centrado vertical */
-    left: 10%; /* Centrado horizontal */
-    transform: translate(0, 0); /* Ajuste fino para el centro */
-    text-align: left;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transition: opacity 900ms ease-in-out; 
-    z-index: 2;
-    width: 80%;
+.carrusel-container {
+  position: relative;
+  width: 80%; /* Ancho del carrusel */
+  margin: 0 auto;
 }
 
-.texto-hover h3 {
-  font-size: 22px;
-  font-weight: bold;
-  margin: 0;
+.carrusel {
+  display: flex;
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
 }
 
-.texto-hover p {
+.card {
+  flex: 0 0 20%; /* 5 cards por fila */
+  margin: 0 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-description {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.descripcion-extendida {
+  display: none;
+  background-color: #183c43;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  background-color: #0097B2;
+  color: white;
+  cursor: pointer;
   font-size: 16px;
-  margin: 5px 0 0;
-  opacity: 0;
-  transition: opacity 900ms ease-in-out;
+  border-radius: 5px;
 }
 
-.imagen-container:hover .texto-hover {
-    opacity: 1; /* Hace visible el texto */
+button:hover {
+  background-color: #00798C;
 }
 
-.imagen-container:hover .texto-hover p {
-  opacity: 1;
+/* Botones de navegación */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  background: none;
+  color: #0097B2;
+  border: none;
+  cursor: pointer;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
 }
 
 @keyframes slideInGallery {
@@ -403,6 +426,9 @@ header {
 
 /* Media query para pantallas medianas (tablets) */
 @media (max-width: 1024px) {
+  .servicios h2 {
+    font-size: 35px; /* Ajuste para pantallas medianas */
+}
     .imagen-container {
       height: 300px; /* Altura menor en tablets */
     }
@@ -414,6 +440,10 @@ header {
 
    /* Media query para pantallas pequeñas (móviles) */
   @media (max-width: 768px) {
+    .servicios h2 {
+      font-size: 30px; /* Ajuste para pantallas más pequeñas */
+    }
+
     .galeria {
       grid-template-columns: 1fr; /* Una sola columna en móviles */
     }
