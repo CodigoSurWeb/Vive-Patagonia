@@ -1,3 +1,27 @@
+const verMasBtns = document.querySelectorAll('.ver-mas');
+const descripcionExtendida = document.querySelector('.descripcion-extendida');
+const tituloExtendido = document.getElementById('titulo-extendido');
+const descripcionLarga = document.getElementById('descripcion-larga');
+const precioElemento = document.getElementById('precio');
+const verMenosBtn = document.querySelector('.ver-menos');
+
+verMasBtns.forEach((btn) => {
+    btn.addEventListener('click', function () {
+        const card = this.closest('.card');
+        tituloExtendido.textContent = card.querySelector('h3').textContent;
+        descripcionLarga.textContent = card.getAttribute('data-descripcion-larga');
+        precioElemento.textContent = `Precio: ${card.getAttribute('data-precio')}`;
+        descripcionExtendida.classList.remove('oculto');
+    });
+});
+
+verMenosBtn.addEventListener('click', () => {
+    descripcionExtendida.classList.add('oculto');
+});
+
+
+
+
 // Función para el menú hamburguesa del header
 document.querySelector('.menu-toggle').addEventListener('click', () => {
     document.querySelector('nav ul').classList.toggle('active');
@@ -54,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Obtener elementos del carrusel y los botones
+/*// Obtener elementos del carrusel y los botones
 const carrusel = document.querySelector('.carrusel');
 const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
@@ -84,21 +108,4 @@ nextButton.addEventListener('click', () => {
     currentIndex = 0; // Si está en el final, vuelve al principio
   }
   moveCarrusel();
-});
-
-// Manejo de "Ver más" y mostrar descripción extendida
-const verMasBtns = document.querySelectorAll('.ver-mas');
-const descripcionExtendida = document.getElementById('descripcion-extendida');
-const descripcionLarga = document.getElementById('descripcion-larga');
-const precioElemento = document.getElementById('precio');
-
-verMasBtns.forEach((btn) => {
-  btn.addEventListener('click', function () {
-    const card = this.closest('.card');
-    const descripcion = card.getAttribute('data-descripcion-larga');
-    const precio = card.getAttribute('data-precio');
-    descripcionLarga.textContent = descripcion;
-    precioElemento.textContent = `Precio: ${precio}`;
-    descripcionExtendida.style.display = 'block';
-  });
-});
+})*/

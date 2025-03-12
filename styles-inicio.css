@@ -330,7 +330,7 @@ header {
   
 .carrusel-container {
   position: relative;
-  width: 80%; /* Ancho del carrusel */
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -341,7 +341,7 @@ header {
 }
 
 .card {
-  flex: 0 0 20%; /* 5 cards por fila */
+  flex: 0 0 20%;
   margin: 0 10px;
   border-radius: 10px;
   overflow: hidden;
@@ -354,23 +354,34 @@ header {
   object-fit: cover;
 }
 
-.card-description {
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+.card-hover {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
   text-align: center;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .card-hover {
+  opacity: 1;
 }
 
 .descripcion-extendida {
   display: none;
-  background-color: #183c43;
+  background-color: #fff;
   padding: 20px;
   margin-top: 20px;
   border-radius: 8px;
+  position: relative;
+}
+
+.descripcion-extendida.oculto {
+  display: none;
 }
 
 button {
@@ -387,7 +398,6 @@ button:hover {
   background-color: #00798C;
 }
 
-/* Botones de navegación */
 .prev, .next {
   position: absolute;
   top: 50%;
@@ -407,14 +417,50 @@ button:hover {
   right: 0;
 }
 
-@keyframes slideInGallery {
-  from {
-    transform: translateY(-50px); /* Inicia desde 50px por encima */
-    opacity: 0; /* Comienza con opacidad 0 */
+@media (max-width: 768px) {
+  .carrusel {
+      flex-wrap: wrap;
   }
-  to {
-    transform: translateY(0); /* Finaliza en su posición original */
-    opacity: 1; /* Finaliza con opacidad 1 */
+  
+  .card {
+      width: 150px; /* Más pequeña en pantallas móviles */
+  }
+}
+
+.servicios .galeria {
+  animation: slideInGallery 1s ease-out;
+  animation-delay: 0.3s;
+}
+
+/* Media query para pantallas medianas (tablets) */
+@media (max-width: 1024px) {
+  .servicios h2 {
+      font-size: 35px;
+  }
+  .galeria {
+      grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablets */
+  }
+  .imagen-container {
+      height: 350px; /* Ajuste de altura para tablets */
+  }
+  .texto-hover {
+      font-size: 20px;
+  }
+}
+
+/* Media query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .servicios h2 {
+      font-size: 30px;
+  }
+  .galeria {
+      grid-template-columns: 1fr; /* 1 columna en móviles */
+  }
+  .imagen-container {
+      height: 250px; /* Ajuste de altura para móviles */
+  }
+  .texto-hover {
+      font-size: 18px;
   }
 }
 
@@ -648,13 +694,6 @@ button:active {
   .input-group {
     flex: unset; /* Para que cada campo ocupe todo el ancho */
   }
-}
-
-.destinos {
-    padding: 40px 20px;
-    font-size: 30px;
-    font-weight: 700;
-    text-align: center;
 }
 
 /* Estilo de Footer*/

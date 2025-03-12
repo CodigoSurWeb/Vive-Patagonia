@@ -40,79 +40,52 @@
       
         <a href="reservas.html" class="cta-button">¡Reservá tu lugar!</a>
       </section>
-      
-    
-        
-          <section class="servicios" id="servicios">
-            <h2 id="animado">Conociendo lugares, uniendo personas</h2>
-            <p>¡VIVE PATAGONIA es tu mejor opción para conocer Tierra del Fuego!</p>
 
-            <div class="carrusel-container">
-              <!-- Carrusel con desplazamiento horizontal -->
-              <div class="carrusel">
-                  <!-- Card 1 -->
-                  <div class="card" data-descripcion-larga="Descripción larga para Card 1. Más detalles sobre el producto." data-precio="$100">
-                      <img src="assets/tolhiun.png" alt="Imagen 1">
-                      <div class="card-description">
-                          <h3>Card 1</h3>
-                          <p class="short-description">Breve descripción...</p>
-                          <button class="ver-mas">Ver más</button>
-                      </div>
+      <section class="servicios">
+        <h2 id="animado">Conociendo lugares, uniendo personas</h2>
+        <p>¡VIVE PATAGONIA es tu mejor opción para conocer Tierra del Fuego!</p>
+
+        <div class="carrusel-container">
+          <div class="carrusel">
+              <!-- Card 1 -->
+              <div class="card" data-descripcion-larga="Descripción larga para Card 1. Más detalles sobre el producto." data-precio="$100">
+                  <img src="assets/tren del fin del mundo.jpg" alt="Imagen 1">
+                  <div class="card-hover">
+                      <h3>Card 1</h3>
+                      <p class="short-description">Breve descripción...</p>
+                      <button class="ver-mas">Ver más</button>
                   </div>
-                  <!-- Card 2 -->
-                  <div class="card" data-descripcion-larga="Descripción larga para Card 2. Más detalles sobre el producto." data-precio="$150">
-                      <img src="assets/tren del fin del mundo.jpg" alt="Imagen 2">
-                      <div class="card-description">
-                          <h3>Card 2</h3>
-                          <p class="short-description">Breve descripción...</p>
-                          <button class="ver-mas">Ver más</button>
-                      </div>
-                  </div>
-                  <!-- Agregar más cards hasta llegar a 10 -->
-                  <div class="card" data-descripcion-larga="Descripción larga para Card 3. Más detalles sobre el producto." data-precio="$120">
-                      <img src="assets/lago-fagnano.jpg" alt="Imagen 3">
-                      <div class="card-description">
-                          <h3>Card 3</h3>
-                          <p class="short-description">Breve descripción...</p>
-                          <button class="ver-mas">Ver más</button>
-                      </div>
-                  </div>
-                  <!-- Continúa con más cards hasta la décima -->
-                  <!-- Card 4 -->
-                  <div class="card" data-descripcion-larga="Descripción larga para Card 4. Más detalles sobre el producto." data-precio="$130">
-                      <img src="assets/img4.jpg" alt="Imagen 4">
-                      <div class="card-description">
-                          <h3>Card 4</h3>
-                          <p class="short-description">Breve descripción...</p>
-                          <button class="ver-mas">Ver más</button>
-                      </div>
-                  </div>
-                  <!-- Card 5 -->
-                  <div class="card" data-descripcion-larga="Descripción larga para Card 5. Más detalles sobre el producto." data-precio="$140">
-                      <img src="assets/img5.jpg" alt="Imagen 5">
-                      <div class="card-description">
-                          <h3>Card 5</h3>
-                          <p class="short-description">Breve descripción...</p>
-                          <button class="ver-mas">Ver más</button>
-                      </div>
-                  </div>
-                  <!-- Añadir más hasta Card 10 -->
               </div>
-          
-              <!-- Descripción extendida y botón de reserva -->
-              <div class="descripcion-extendida" id="descripcion-extendida">
-                  <h2>Descripción extendida</h2>
-                  <p id="descripcion-larga"></p>
-                  <p><strong id="precio"></strong></p>
-                  <button class="reservar-btn">Reservar</button>
+              
+              <!-- Card 2 -->
+              <div class="card" data-descripcion-larga="Descripción larga para Card 2. Más detalles sobre el producto." data-precio="$150">
+                  <img src="assets/tolhiun.png" alt="Imagen 2">
+                  <div class="card-hover">
+                      <h3>Card 2</h3>
+                      <p class="short-description">Breve descripción...</p>
+                      <button class="ver-mas">Ver más</button>
+                  </div>
               </div>
-          
-              <!-- Botones de navegación del carrusel -->
-              <button class="prev" id="prev">❮</button>
-              <button class="next" id="next">❯</button>
+              
+              <!-- Agregar más cards según sea necesario -->
           </div>
-
-          </section>
+          
+          <!-- Contenedor de descripción extendida (inicialmente oculto) -->
+          <div class="descripcion-extendida oculto">
+              <h2 id="titulo-extendido"></h2>
+              <p id="descripcion-larga"></p>
+              <p><strong id="precio"></strong></p>
+              <button class="reservar-btn">Reservar</button>
+              <button class="ver-menos">Ver menos</button>
+          </div>
+          
+          <!-- Botones de navegación -->
+          <button class="prev" id="prev">❮</button>
+          <button class="next" id="next">❯</button>
+      </div>
+  </section>
+  
+    </section>
 
           <section class = "flota">
             <h2>Nuestra flota</h2>
@@ -137,10 +110,6 @@
               <button class="carousel-control next" onclick="moveSlide(1)">&#10095;</button>
             </div>
 
-          </section>
-
-          <section class="destinos">
-            <p>Conociendo lugares, uniendo personas</p>
           </section>
 
           <section class = "Contacto"> 
