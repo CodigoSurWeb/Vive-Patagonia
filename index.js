@@ -1,23 +1,71 @@
+// Manejo de "Ver más" y "Ver menos"
 const verMasBtns = document.querySelectorAll('.ver-mas');
 const descripcionExtendida = document.querySelector('.descripcion-extendida');
 const tituloExtendido = document.getElementById('titulo-extendido');
 const descripcionLarga = document.getElementById('descripcion-larga');
 const precioElemento = document.getElementById('precio');
-const verMenosBtn = document.querySelector('.ver-menos');
 
 verMasBtns.forEach((btn) => {
     btn.addEventListener('click', function () {
         const card = this.closest('.card');
+        
+        // Si el mismo botón está cerrando la descripción
+        if (descripcionExtendida.style.display === 'block' && this.textContent === 'Ver menos') {
+            descripcionExtendida.style.display = 'none';
+            this.textContent = 'Ver más';
+            card.classList.remove('hovered');
+            return;
+        }
+
+        // Actualizar contenido
         tituloExtendido.textContent = card.querySelector('h3').textContent;
         descripcionLarga.textContent = card.getAttribute('data-descripcion-larga');
         precioElemento.textContent = `Precio: ${card.getAttribute('data-precio')}`;
-        descripcionExtendida.classList.remove('oculto');
+
+        // Mostrar la descripción extendida
+        descripcionExtendida.style.display = 'block';
+
+        // Resetear todos los botones y tarjetas
+        verMasBtns.forEach((b) => b.textContent = 'Ver más');
+        document.querySelectorAll('.card').forEach((c) => c.classList.remove('hovered'));
+
+        // Cambiar este botón a "Ver menos"
+        this.textContent = 'Ver menos';
+        card.classList.add('hovered');
     });
 });
 
-verMenosBtn.addEventListener('click', () => {
-    descripcionExtendida.classList.add('oculto');
+// Flechas de navegación para el carrusel
+let index1 = 0;
+const cards = document.querySelectorAll('.card');
+
+function showCard(index1) {
+    const offset = -index1 * 20; // Ajustar según el número de cards en una línea
+    document.querySelector('.carrusel').style.transform = `translateX(${offset}%)`;
+}
+
+document.getElementById('next').addEventListener('click', () => {
+    index1 = (index1 + 1) % cards.length;
+    showCard(index1);
 });
+
+document.getElementById('prev').addEventListener('click', () => {
+    index1 = (index1 - 1 + cards.length) % cards.length;
+    showCard(index1);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

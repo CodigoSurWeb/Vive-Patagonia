@@ -328,6 +328,7 @@ header {
   animation: slideIn 0.8s ease-out; /* Duración de 0.8 segundos y efecto suave */
 }
   
+
 .carrusel-container {
   position: relative;
   width: 80%;
@@ -343,41 +344,81 @@ header {
 .card {
   flex: 0 0 20%;
   margin: 0 10px;
-  border-radius: 10px;
+  border-radius: 35px;
   overflow: hidden;
   position: relative;
+  transition: transform 0.2s ease-in-out;
 }
 
 .card img {
   width: 100%;
-  height: 200px;
+  height: 300px;
   object-fit: cover;
+  border-radius: 35px;
 }
 
-.card-hover {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  text-align: center;
-  padding: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
+/* Estilo de hover normal: al pasar el mouse sobre la carta */
 .card:hover .card-hover {
   opacity: 1;
 }
 
+.card .card-hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  gap: 5px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Hace que cubra toda la imagen */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card-hover h3 {
+  font-size: 18px; /* Tamaño adecuado para el título */
+  margin-bottom: 5px;
+}
+
+.card-hover p {
+  font-size: 14px; /* Reduce el tamaño de la descripción */
+  margin-bottom: 5px;
+}
+
+
+/* Cuando la carta es seleccionada con "Ver más", sigue mostrando el hover */
+.card.hovered .card-hover {
+  opacity: 1;
+}
+
+/* Ajustes para la descripción extendida */
 .descripcion-extendida {
-  display: none;
-  background-color: #fff;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 8px;
+  background-color: #ecf7f9;
+  border-radius: 30px;
+  color: #183c43;
+  padding: 30px;
   position: relative;
+  max-width: 70%; /* Reduce el ancho dentro del container */
+  margin: 40px auto; /* Centra la descripción en el contenedor */
+  text-align: center;
+}
+
+.descripcion-extendida p {
+  margin-bottom: 10px;
+  color: #183c43;
+  font-weight: 500;
+
+}
+
+.descripcion-extendida button {
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .descripcion-extendida.oculto {
@@ -385,23 +426,29 @@ header {
 }
 
 button {
-  padding: 10px;
+  padding: 12px 30px 12px 30px;
   border: none;
-  background-color: #0097B2;
+  background-color: #f0a717;
   color: white;
   cursor: pointer;
   font-size: 16px;
-  border-radius: 5px;
+  font-weight: 600;
+  border-radius: 15px;
 }
 
 button:hover {
-  background-color: #00798C;
+  background-color: #d89615;
 }
 
+button:active {
+  background-color: #c08612
+}
+
+/* Posicionamiento de las flechas */
 .prev, .next {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(0);
   font-size: 30px;
   background: none;
   color: #0097B2;
@@ -410,12 +457,13 @@ button:hover {
 }
 
 .prev {
-  left: 0;
+  left: 10px;
 }
 
 .next {
-  right: 0;
+  right: 10px;
 }
+
 
 @media (max-width: 768px) {
   .carrusel {
@@ -427,7 +475,7 @@ button:hover {
   }
 }
 
-.servicios .galeria {
+.servicios {
   animation: slideInGallery 1s ease-out;
   animation-delay: 0.3s;
 }
@@ -436,9 +484,6 @@ button:hover {
 @media (max-width: 1024px) {
   .servicios h2 {
       font-size: 35px;
-  }
-  .galeria {
-      grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablets */
   }
   .imagen-container {
       height: 350px; /* Ajuste de altura para tablets */
@@ -465,7 +510,7 @@ button:hover {
 }
 
 /* Aplicamos la animación a la galería */
-.servicios .galeria {
+.servicios  {
   animation: slideInGallery 1s ease-out; /* Duración de 1 segundo y efecto suave */
   animation-delay: 0.3s; /* Retraso para que empiece después de la animación de la sección */
 }
@@ -490,9 +535,6 @@ button:hover {
       font-size: 30px; /* Ajuste para pantallas más pequeñas */
     }
 
-    .galeria {
-      grid-template-columns: 1fr; /* Una sola columna en móviles */
-    }
   
     .imagen-container {
       height: 250px; /* Altura menor en móviles */
