@@ -284,33 +284,74 @@ header {
 
 
 .servicios {
-    background-color: #44abbe;
-    padding: 50px 20px;
-    text-align: center;
-    color: #fff;
+  background-color: #44abbe;
+  padding: 50px 20px;
+  text-align: center;
+  color: #fff;
 }
 
 .servicios h2 {
-    font-size: 40px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    white-space: pre-wrap;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  white-space: pre-wrap;
+  word-wrap: break-word; /* Evita que el texto se quede unido */
+
 }
 
+/* Efecto de animación en el título */
 .servicios h2 span {
   display: inline-block;
   transition: transform 0.6s ease;
 }
 
 .servicios h2 span:hover {
-  transform: translateY(-20px);
+  transform: translateY(-10px);
 }
 
+/* Ajuste del tamaño del texto */
 .servicios p {
-    margin-bottom: 50px;
-    font-size: 19px;
+  margin-bottom: 50px;
+  font-size: 19px;
+  max-width: 700px; /* Limita el ancho del texto para mejor lectura */
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* Responsive */
+
+/* Tablets: Reducir tamaño del título */
+@media (max-width: 1024px) {
+  .servicios h2 {
+      font-size: 32px;
+  }
+  .servicios p {
+      font-size: 18px;
+  }
+}
+
+/* Móviles: Reducir padding y tamaño de fuente */
+@media (max-width: 768px) {
+  .servicios {
+      padding: 30px 15px;
+  }
+
+  .servicios h2 {
+      font-size: 18px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+  }
+
+  .servicios p {
+      font-size: 16px;
+      margin-bottom: 30px;
+  }
+  
+  /* Desactivar el efecto hover en móviles */
+  .servicios h2 span:hover {
+      transform: none;
+  }
+}
  /* Definimos la animación de desplazamiento */
  @keyframes slideIn {
   from {
@@ -323,26 +364,27 @@ header {
   }
 }
 
-/* Aplicamos la animación a la sección */
 .servicios {
   animation: slideIn 0.8s ease-out; /* Duración de 0.8 segundos y efecto suave */
 }
-  
 
+/* Contenedor principal del carrusel */
 .carrusel-container {
   position: relative;
-  width: 80%;
+  overflow: hidden;
+  width: 75%;
   margin: 0 auto;
 }
 
+/* Contenedor del carrusel, asegurando que las cards se alineen horizontalmente */
 .carrusel {
   display: flex;
-  overflow: hidden;
   transition: transform 0.5s ease-in-out;
 }
 
+/* Cada card tendrá un tamaño flexible basado en la cantidad de cards visibles */
 .card {
-  flex: 0 0 20%;
+  flex: 0 0 33.33%;   /* 3 tarjetas por fila (100% / 3 = 33.33%) */
   margin: 0 10px;
   border-radius: 35px;
   overflow: hidden;
@@ -350,6 +392,7 @@ header {
   transition: transform 0.2s ease-in-out;
 }
 
+/* Estilo de la imagen dentro de cada card */
 .card img {
   width: 100%;
   height: 300px;
@@ -357,11 +400,12 @@ header {
   border-radius: 35px;
 }
 
-/* Estilo de hover normal: al pasar el mouse sobre la carta */
+/* Estilo de hover para mostrar la superposición de la card */
 .card:hover .card-hover {
   opacity: 1;
 }
 
+/* Contenedor de la superposición en las cards */
 .card .card-hover {
   display: flex;
   flex-direction: column;
@@ -372,7 +416,7 @@ header {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%; /* Hace que cubra toda la imagen */
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   text-align: center;
@@ -381,52 +425,55 @@ header {
   transition: opacity 0.3s ease-in-out;
 }
 
+/* Estilo del título y descripción dentro de la superposición */
 .card-hover h3 {
-  font-size: 18px; /* Tamaño adecuado para el título */
+  font-size: 18px;
   margin-bottom: 5px;
 }
 
 .card-hover p {
-  font-size: 14px; /* Reduce el tamaño de la descripción */
+  font-size: 14px;
   margin-bottom: 5px;
 }
 
-
-/* Cuando la carta es seleccionada con "Ver más", sigue mostrando el hover */
+/* Ajuste cuando la carta es seleccionada para mostrar el hover */
 .card.hovered .card-hover {
   opacity: 1;
 }
 
-/* Ajustes para la descripción extendida */
+/* Estilo para la descripción extendida */
 .descripcion-extendida {
   background-color: #ecf7f9;
   border-radius: 30px;
   color: #183c43;
   padding: 30px;
   position: relative;
-  max-width: 70%; /* Reduce el ancho dentro del container */
-  margin: 40px auto; /* Centra la descripción en el contenedor */
+  max-width: 70%;
+  margin: 40px auto;
   text-align: center;
 }
 
+/* Estilo de los párrafos dentro de la descripción extendida */
 .descripcion-extendida p {
   margin-bottom: 10px;
   color: #183c43;
   font-weight: 500;
-
 }
 
+/* Estilo del botón dentro de la descripción extendida */
 .descripcion-extendida button {
   margin-top: 10px;
   margin-bottom: 20px;
 }
 
+/* Clase ocultar para la descripción extendida */
 .descripcion-extendida.oculto {
   display: none;
 }
 
-button {
-  padding: 12px 30px 12px 30px;
+/* Estilo para los botones de navegación */
+.ver-mas, .reservar-btn {
+  padding: 12px 30px;
   border: none;
   background-color: #f0a717;
   color: white;
@@ -436,48 +483,62 @@ button {
   border-radius: 15px;
 }
 
-button:hover {
+/* Estilo del hover en los botones */
+.ver-mas:hover, .reservar-btn:hover {
   background-color: #d89615;
 }
 
-button:active {
-  background-color: #c08612
+/* Estilo del estado activo en los botones */
+.ver-mas:active, .reservar-btn:active {
+  background-color: #c08612;
+  color: #fff;
 }
 
-/* Posicionamiento de las flechas */
-.prev, .next {
+/* Estilo y posicionamiento de las flechas de navegación */
+.prev-card, .next-card {
   position: absolute;
   top: 50%;
-  transform: translateY(0);
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: white;
   font-size: 30px;
-  background: none;
-  color: #0097B2;
+  padding: 10px;
   border: none;
+  border-radius: 50%;
   cursor: pointer;
 }
 
-.prev {
+.prev-card:hover, .next-card:hover {
+  background-color: transparent;
+  color: #3d9aab;
+}
+
+.prev-card {
   left: 10px;
 }
 
-.next {
+.next-card {
   right: 10px;
 }
 
+.oculto {
+  display: none;
+}
 
-@media (max-width: 768px) {
-  .carrusel {
-      flex-wrap: wrap;
-  }
-  
+/* Ajuste de responsividad */
+
+/* Pantallas medianas: 2 tarjetas por fila */
+@media (max-width: 1024px) {
   .card {
-      width: 150px; /* Más pequeña en pantallas móviles */
+    flex: 0 0 50%;  /* 2 tarjetas por fila */
   }
 }
 
-.servicios {
-  animation: slideInGallery 1s ease-out;
-  animation-delay: 0.3s;
+/* Pantallas pequeñas: 1 tarjeta por fila */
+@media (max-width: 768px) {
+  .card {
+    flex: 0 0 100%;  /* 1 tarjeta por fila */
+  }
 }
 
 /* Media query para pantallas medianas (tablets) */
@@ -486,7 +547,7 @@ button:active {
       font-size: 35px;
   }
   .imagen-container {
-      height: 350px; /* Ajuste de altura para tablets */
+      height: 350px;
   }
   .texto-hover {
       font-size: 20px;
@@ -498,11 +559,8 @@ button:active {
   .servicios h2 {
       font-size: 30px;
   }
-  .galeria {
-      grid-template-columns: 1fr; /* 1 columna en móviles */
-  }
   .imagen-container {
-      height: 250px; /* Ajuste de altura para móviles */
+      height: 250px;
   }
   .texto-hover {
       font-size: 18px;
@@ -510,42 +568,38 @@ button:active {
 }
 
 /* Aplicamos la animación a la galería */
-.servicios  {
-  animation: slideInGallery 1s ease-out; /* Duración de 1 segundo y efecto suave */
-  animation-delay: 0.3s; /* Retraso para que empiece después de la animación de la sección */
+.servicios {
+  animation: slideInGallery 1s ease-out;
+  animation-delay: 0.3s;
 }
 
 /* Media query para pantallas medianas (tablets) */
 @media (max-width: 1024px) {
   .servicios h2 {
-    font-size: 35px; /* Ajuste para pantallas medianas */
+    font-size: 35px;
+  }
+  .imagen-container {
+    height: 300px;
+  }
+  .texto-hover {
+    font-size: 20px;
+  }
 }
-    .imagen-container {
-      height: 300px; /* Altura menor en tablets */
-    }
-  
-    .texto-hover {
-      font-size: 20px;
-    }
+
+/* Media query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .servicios h2 {
+    font-size: 30px;
   }
-
-   /* Media query para pantallas pequeñas (móviles) */
-  @media (max-width: 768px) {
-    .servicios h2 {
-      font-size: 30px; /* Ajuste para pantallas más pequeñas */
-    }
-
-  
-    .imagen-container {
-      height: 250px; /* Altura menor en móviles */
-    }
-  
-    .texto-hover {
-      font-size: 18px;
-    }
+  .imagen-container {
+    height: 250px;
   }
+  .texto-hover {
+    font-size: 18px;
+  }
+}
 
-/* Contenedor principal del carrusel */
+/* Contenedor principal del carrusel de imagenes de "Nuestra flota" */
 .custom-carousel {
   position: relative;
   width: 80%; /* Ancho del carrusel */
@@ -553,6 +607,8 @@ button:active {
   margin: 0 auto; /* Centrado */
   border-radius: 20px; /* Esquinas redondeadas */
   overflow: hidden; /* Ocultar cualquier parte que sobrepase los límites */
+  margin-bottom: 80px;
+  box-shadow: 0 10px 40px rgba(31, 77, 85, 0.2);/* Sombra suave */
 }
 
 /* Contenedor de las imágenes del carrusel */
@@ -569,6 +625,12 @@ button:active {
 }
 
 .carousel-item img {
+  width: 100%; /* Ancho 100% para que ocupe todo el contenedor */
+  height: 100%; /* Alto 100% para ajustarse sin distorsionar */
+  object-fit: cover; /* Asegura que las imágenes se ajusten bien sin perder proporción */
+}
+
+.carousel-item video {
   width: 100%; /* Ancho 100% para que ocupe todo el contenedor */
   height: 100%; /* Alto 100% para ajustarse sin distorsionar */
   object-fit: cover; /* Asegura que las imágenes se ajusten bien sin perder proporción */
@@ -596,6 +658,7 @@ button:active {
   right: 10px;
 }
 
+
 .flota {
     text-align: center;
   }
@@ -615,6 +678,7 @@ button:active {
   @media (max-width: 768px) {
     .carousel-images img {
       height: 250px; /* Ajuste la altura según el tamaño de pantalla */
+    
     }
   }
 
